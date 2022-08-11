@@ -2,7 +2,6 @@ package pl.coderslab.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import pl.coderslab.entity.Author;
 import pl.coderslab.entity.Role;
 
 @Component
