@@ -12,5 +12,6 @@ Project is created with:
 * Spring Boot
 * Spring Security
 * MySQL
+* BCrypt
 * JSTL
 * Lombok
