@@ -1,7 +1,3 @@
-## Table of content
-* [General info](#general-info)
-* [Technologies](#technologies)
-
 ## General info
 The simple web application with API to manage books. The project includes user registration.
 	
