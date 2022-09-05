@@ -2,7 +2,7 @@
 The simple web application with API to manage books. The project includes user registration.
 	
 ## Technologies
-Project is created with:
+The project is created with:
 * Java 11
 * Maven
 * Spring Boot
