@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>pl.coderslab</groupId>
-    <artifactId>spring-boot-security-project</artifactId>
+    <artifactId>spring-boot-books-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-security-project</name>
-    <description>spring-boot-security-project</description>
+    <name>spring-boot-books-project</name>
+    <description>spring-boot-books-project</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -62,4 +62,12 @@
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
