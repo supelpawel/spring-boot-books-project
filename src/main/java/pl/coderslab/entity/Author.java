@@ -14,74 +14,70 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "authors")
 public class Author {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  @NotEmpty
+  private String firstName;
+  @NotEmpty
+  private String lastName;
+  @PESEL
+  @NotEmpty
+  private String pesel;
+  @Email
+  @NotEmpty
+  private String email;
 
-    @NotEmpty
-    private String firstName;
+  public Long getId() {
+    return this.id;
+  }
 
-    @NotEmpty
-    private String lastName;
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    @PESEL
-    @NotEmpty
-    private String pesel;
+  public String getFirstName() {
+    return this.firstName;
+  }
 
-    @Email
-    @NotEmpty
-    private String email;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public Long getId() {
-        return this.id;
-    }
+  public String getLastName() {
+    return this.lastName;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
+  public String getName() {
+    return firstName + " " + lastName;
+  }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+  public String getPesel() {
+    return pesel;
+  }
 
-    public String getLastName() {
-        return this.lastName;
-    }
+  public void setPesel(String pesel) {
+    this.pesel = pesel;
+  }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getName() {
-        return firstName + " " + lastName;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public String getPesel() {
-        return pesel;
-    }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "Author{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Author{" +
+        "id=" + id +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        '}';
+  }
 }

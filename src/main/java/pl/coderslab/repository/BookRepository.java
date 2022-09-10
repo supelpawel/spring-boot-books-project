@@ -13,24 +13,25 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 
-    List<Book> findByTitle(String title);
+  List<Book> findByTitle(String title);
 
-    @Query("select b from Book b where b.title = :title")
-    List<Book> findAllByTitleUsingQuery(@Param("title") String title);
+  @Query("select b from Book b where b.title = :title")
+  List<Book> findAllByTitleUsingQuery(@Param("title") String title);
 
-    List<Book> findByCategory(Category category);
+  List<Book> findByCategory(Category category);
 
-    @Query("select b from Book b where b.category = :category")
-    List<Book> findAllByCategoryUsingQuery(@Param("category") Category category);
+  @Query("select b from Book b where b.category = :category")
+  List<Book> findAllByCategoryUsingQuery(@Param("category") Category category);
 
-    List<Book> findByCategoryId(long id);
+  List<Book> findByCategoryId(long id);
 
-    @Query("select b from Book b where b.publisher = :publisher")
-    List<Book> findByPublisherUsingQuery(@Param("publisher") Publisher publisher);
+  @Query("select b from Book b where b.publisher = :publisher")
+  List<Book> findByPublisherUsingQuery(@Param("publisher") Publisher publisher);
 
-    @Query("select b from Book b where b.category = :category")
-    Page<Book> findFirstByCategoryOrderByTitleUsingQuery(@Param("category") Category category, Pageable pageable);
+  @Query("select b from Book b where b.category = :category")
+  Page<Book> findFirstByCategoryOrderByTitleUsingQuery(@Param("category") Category category,
+      Pageable pageable);
 
-    @Query("select b from Book b where b.rating between :min and :max")
-    List<Book> findAllByRatingBetween(@Param("min") int start, @Param("max") int stop);
+  @Query("select b from Book b where b.rating between :min and :max")
+  List<Book> findAllByRatingBetween(@Param("min") int start, @Param("max") int stop);
 }

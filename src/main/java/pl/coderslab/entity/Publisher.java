@@ -17,69 +17,65 @@ import java.util.List;
 @Table(name = "publishers")
 public class Publisher {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  @NotEmpty
+  private String name;
+  @OneToMany(mappedBy = "publisher")
+  private List<Book> books = new ArrayList<>();
+  @NIP
+  @NotEmpty
+  private String nip;
+  @REGON
+  @NotEmpty
+  private String regon;
 
-    @NotEmpty
-    private String name;
+  public Long getId() {
+    return this.id;
+  }
 
-    @OneToMany(mappedBy = "publisher")
-    private List<Book> books = new ArrayList<>();
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    @NIP
-    @NotEmpty
-    private String nip;
+  public String getName() {
+    return this.name;
+  }
 
-    @REGON
-    @NotEmpty
-    private String regon;
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public Long getId() {
-        return this.id;
-    }
+  public List<Book> getBooks() {
+    return books;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setBooks(List<Book> books) {
+    this.books = books;
+  }
 
-    public String getName() {
-        return this.name;
-    }
+  public String getNip() {
+    return nip;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setNip(String nip) {
+    this.nip = nip;
+  }
 
-    public List<Book> getBooks() {
-        return books;
-    }
+  public String getRegon() {
+    return regon;
+  }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
+  public void setRegon(String regon) {
+    this.regon = regon;
+  }
 
-    public String getNip() {
-        return nip;
-    }
-
-    public void setNip(String nip) {
-        this.nip = nip;
-    }
-
-    public String getRegon() {
-        return regon;
-    }
-
-    public void setRegon(String regon) {
-        this.regon = regon;
-    }
-
-    @Override
-    public String toString() {
-        return "Publisher{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Publisher{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        '}';
+  }
 }

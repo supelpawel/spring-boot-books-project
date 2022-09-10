@@ -7,20 +7,16 @@ import pl.coderslab.entity.Role;
 @Component
 public class StringToRoleConverter implements Converter<String, Role> {
 
-    @Override
-    public Role convert(String source) {
+  @Override
+  public Role convert(String source) {
+    try {
+      long roleId = Long.parseLong(source);
+      Role role = new Role();
 
-        try {
-
-            long roleId = Long.parseLong(source);
-
-            Role role = new Role();
-            role.setId(roleId);
-
-            return role;
-        } catch (NumberFormatException e) {
-
-        }
-        return null;
+      role.setId(roleId);
+      return role;
+    } catch (NumberFormatException e) {
     }
+    return null;
+  }
 }
